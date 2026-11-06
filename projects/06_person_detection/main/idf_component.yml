@@ -1,0 +1,5 @@
+dependencies:
+  idf: ">=5.3"
+  # TFLite Micro + ESP-NN (kéo theo espressif/esp-nn)
+  espressif/esp-tflite-micro: "^1.4.1"
+  espressif/esp32-camera: "^2.1.8"

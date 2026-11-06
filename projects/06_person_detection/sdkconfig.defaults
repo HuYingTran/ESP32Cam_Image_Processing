@@ -1,0 +1,22 @@
+# Cấu hình mặc định cho ESP32-CAM AI-Thinker (ESP32, 4 MB flash, 4 MB PSRAM)
+# Sửa file này thì xóa sdkconfig (hoặc idf.py fullclean) để áp dụng lại
+
+# Flash 4 MB, một phân vùng app lớn (1.5 MB) đủ cho model 300 KB + TFLite Micro
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_SINGLE_APP_LARGE=y
+
+# CPU 240 MHz, tối ưu tốc độ (ảnh hưởng trực tiếp thời gian suy luận)
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# PSRAM: frame buffer camera, tensor arena nếu RAM trong không đủ
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_USE_CAPS_ALLOC=y
+
+# Camera: chỉ cần driver OV2640
+CONFIG_OV2640_SUPPORT=y
+
+# ESP-NN: dùng kernel tối ưu cho ESP32 (bản so sánh tắt nó trong sdkconfig.ansi_c)
+CONFIG_NN_OPTIMIZED=y
+
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=4096

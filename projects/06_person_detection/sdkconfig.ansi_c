@@ -1,0 +1,4 @@
+# Ghép sau sdkconfig.defaults để build bản KHÔNG có ESP-NN (kernel C tham chiếu của TFLite Micro):
+#   idf.py -B C:\esp-build\06_ansi -D SDKCONFIG=C:/esp-build/06_ansi/sdkconfig -D "SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.ansi_c" build flash monitor
+CONFIG_NN_OPTIMIZED=n
+CONFIG_NN_ANSI_C=y

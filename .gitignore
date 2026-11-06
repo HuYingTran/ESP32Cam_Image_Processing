@@ -1,0 +1,36 @@
+.pio
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+
+# Secrets
+common/secrets.h
+arduino/*/secrets.h
+
+# Build output trong từng bài
+projects/*/.pio
+
+# Log Serial (filter log2file)
+platformio-device-monitor-*.log
+qr_test_sheet.html
+
+# Bài ESP-IDF (#6, #10): build, sdkconfig sinh ra, component tải về
+projects/*/build*/
+projects/*/sdkconfig
+projects/*/sdkconfig.old
+projects/*/managed_components/
+
+# Ảnh chụp / kết quả đo của bài #6 (có ảnh người thật)
+snapshots/
+person_eval*.csv
+
+# Ảnh thu cho bài #7 (Edge Impulse)
+dataset/
+
+# Python
+__pycache__/
+*.pyc
+
+# Arduino IDE
+arduino/*/build/
